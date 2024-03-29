@@ -1,0 +1,17 @@
+{
+  "name": "nodejstest",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "debug": "~2.6.9",
+    "ejs": "^3.1.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "nodemon": "^3.1.0",
+    "morgan": "*"
+  }
+}

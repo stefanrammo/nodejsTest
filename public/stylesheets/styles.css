@@ -1,0 +1,85 @@
+:root {
+    --main-apricot: #ffcdb2;
+    --main-melon: #FFB4A2;
+    --main-salmon: rgba(229, 152, 155, 0.5);
+    --main-old-rose: #B5838D;
+    --main-dim-gray: #6D6875;
+  }
+
+body {
+  background-color: var(--main-melon);
+}
+
+nav {
+    background-color: var(--main-apricot);
+
+}
+
+.card-body {
+  background-color: var(--main-salmon);
+}
+
+#h1 {
+  color: var(--main-dim-gray);
+  background-color: white;
+  padding: 1rem;
+  border-radius: 2rem;
+  font-weight: 500;
+}
+
+.product {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.product img:hover {
+  transition-duration: 500ms;
+  scale: 1.2;
+}
+
+.product img {
+  height: 15rem;
+  border-radius: 1rem;
+}
+
+.price {
+ padding: 1rem;
+ margin: 1rem;
+ font-size: larger;
+ background-image: linear-gradient(var(--main-apricot), var(--main-old-rose));
+ color: var(--main-dim-melon);
+ width: 20%;
+ border-radius: 1rem;
+}
+
+.price:hover {
+  transition-duration: 500ms;
+  scale: 1.5;
+}
+
+.scrolled-down{
+  transform:translateY(-100%); transition: all 0.3s ease-in-out;
+}
+.scrolled-up{
+  transform:translateY(0); transition: all 0.3s ease-in-out;
+}
+
+#contact {
+  margin: 5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+h6 {
+  padding-bottom: 0.5rem;
+}
+
+.h4 {
+  padding-bottom: 5rem;
+}
+
+#contact {
+  justify-content: space-around;
+}

@@ -1,0 +1,99 @@
+<!-- Carousel with placeholder images -->
+<div id="main">
+<main class="carousel-container">
+    <div class="carousel">
+      <div class="item active">
+        <img src="/images/e62673e5f040c5c3a5e50d02218b87f0.jpeg" alt="Peach Ice Cream" />
+        <p class="caption">Peach Ice Cream</p>
+      </div>
+      <div class="item">
+        <img src="/images/icecreampinktopvray3dmodel001.jpg" alt="Strawberry Ice Cream" />
+        <p class="caption">Strawberry Ice Cream</p>
+      </div>
+      <div class="item">
+        <img src="/images/Sweets_Ice_cream_Raspberry_Pink_color_Balls_520514_1920x1080.jpg" alt="Raspberry Ice Cream" />
+        <p class="caption">Raspberry Ice Cream</p>
+      </div>
+      <div class="item">
+        <img src="/images/wp3146628.jpg" alt="Melon Ice Cream" />
+        <p class="caption">Melon Ice Cream</p>
+      </div>
+    </div>
+    <button class="btn prev">Prev</button>
+    <button class="btn next">Next</button>
+    <div class="dots"></div>
+  </main>
+</div>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let carousel = document.querySelector(".carousel");
+      let items = carousel.querySelectorAll(".item");
+      let dotsContainer = document.querySelector(".dots");
+      let currentIndex = 0;
+      let intervalId; // Variable to store the interval ID
+      
+      // Insert dots into the DOM
+      items.forEach((_, index) => {
+        let dot = document.createElement("span");
+        dot.classList.add("dot");
+        if (index === 0) dot.classList.add("active");
+        dot.dataset.index = index;
+        dotsContainer.appendChild(dot);
+      });
+    
+      let dots = document.querySelectorAll(".dot");
+    
+      // Function to show a specific item
+      function showItem(index) {
+        items.forEach((item, idx) => {
+          item.classList.remove("active");
+          dots[idx].classList.remove("active");
+          if (idx === index) {
+            item.classList.add("active");
+            dots[idx].classList.add("active");
+          }
+        });
+        currentIndex = index;
+      }
+    
+      // Function to show next item
+      function showNextItem() {
+        currentIndex = (currentIndex + 1) % items.length;
+        showItem(currentIndex);
+      }
+      
+      // Function to reset and start the timer
+      function resetInterval() {
+        clearInterval(intervalId); // Clear previous interval
+        intervalId = setInterval(() => {
+          showNextItem();
+        }, 2000); // Restart the interval with a delay of 5 seconds (5000 milliseconds)
+      }
+      
+      // Event listeners for buttons
+      document.querySelector(".prev").addEventListener("click", () => {
+        showItem((currentIndex - 1 + items.length) % items.length);
+        resetInterval(); // Reset the interval on button click
+      });
+    
+      document.querySelector(".next").addEventListener("click", () => {
+        showNextItem();
+        resetInterval(); // Reset the interval on button click
+      });
+    
+      // Event listeners for dots
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          let index = parseInt(dot.dataset.index);
+          showItem(index);
+          resetInterval(); // Reset the interval on dot click
+        });
+      });
+      
+      // Start the initial interval
+      resetInterval();
+    });
+  </script>
+  

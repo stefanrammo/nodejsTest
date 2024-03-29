@@ -1,0 +1,74 @@
+<!-- Navbar -->
+<nav class="autohide navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index#main">
+            <img src="/images/ice-cream-cone.png" 
+            alt=""
+            width="30"
+            height="30" />
+            The Ice Cream Shop
+        </a>
+        <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index#main">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/index#blog-section">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/index#products-section">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/contact">Contact</a>
+                </li>
+            </ul>
+            <h1 class="h1 lead" id="h1">We sell the best ice cream around!</h1>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+
+el_autohide = document.querySelector('.autohide');
+
+// add padding-top to bady (if necessary)
+navbar_height = document.querySelector('.navbar').offsetHeight;
+document.body.style.paddingTop = navbar_height + 'px';
+
+if(el_autohide){
+  var last_scroll_top = 0;
+  window.addEventListener('scroll', function() {
+        let scroll_top = window.scrollY;
+       if(scroll_top < last_scroll_top) {
+            el_autohide.classList.remove('scrolled-down');
+            el_autohide.classList.add('scrolled-up');
+        }
+        else {
+            el_autohide.classList.remove('scrolled-up');
+            el_autohide.classList.add('scrolled-down');
+        }
+        last_scroll_top = scroll_top;
+  }); 
+  // window.addEventListener
+}
+// if
+
+}); 
+// DOMContentLoaded  end
+</script>
