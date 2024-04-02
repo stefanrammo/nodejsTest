@@ -84,7 +84,7 @@ h6 {
   justify-content: space-around;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1400px) {
   div.d-flex.justify-content-around {
     display: flex;
     flex-direction: column;
